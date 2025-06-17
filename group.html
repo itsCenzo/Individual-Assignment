@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ammar Shamsuri | Personal Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+.section-box {
+  background-color: #8f969d; /* dark gray */
+  color: #ffffff;
+  padding: 40px 30px;
+  margin: 40px auto;
+  max-width: 900px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  text-align: center;
+}
+.section-box form input,
+.section-box form textarea {
+  background-color: #495057;
+  color: #fff;
+  border: 1px solid #ced4da;
+}
+
+.section-box form input::placeholder,
+.section-box form textarea::placeholder {
+  color: #dee2e6;
+}
+
+.section-box form label {
+  color: #f8f9fa;
+}
+.section-box button {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.section-box button:hover {
+  background-color: #dee2e6;
+}
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 6px 12px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background: #495057;
+      border-radius: 4px;
+    }
+
+    section {
+      padding: 20px 0;
+    }
+
+    h2 {
+      text-align: center;
+      color: #212529;
+      margin-bottom: 30px;
+    }
+
+    #intro {
+      background: linear-gradient(to right, #6c757d, #adb5bd);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    #intro h2 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    #intro p {
+      font-size: 1.2rem;
+    }
+
+    #intro button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background: white;
+      color: #343a40;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 25px;
+      transition: background 0.3s;
+    }
+
+    #intro button:hover {
+      background: #dee2e6;
+    }
+
+    #skills ul {
+      max-width: 600px;
+      margin: auto;
+      list-style: square;
+      padding-left: 20px;
+    }
+
+    #skills li {
+      padding: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .experience-card {
+      background: #797070;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: auto;
+    }
+
+    #education p {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+
+    form label {
+      font-weight: bold;
+      display: block;
+      margin-top: 20px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+
+    form button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background: #343a40;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #495057;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+    }
+
+    #top-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 12px 16px;
+      font-size: 1.2rem;
+      background-color: #212529;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    #top-button.show {
+      display: block;
+    }
+    .card {
+  background: #2c2f33;
+  color: #f8f9fa;
+  padding: 20px 24px;
+  border-left: 4px solid #ffc107;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+  .section-box {
+    padding: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #intro h2 {
+    font-size: 2rem;
+  }
+
+  #intro p {
+    font-size: 1rem;
+  }
+
+  form, .experience-card, .card {
+    padding: 20px;
+  }
+}
+.typed-text {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.cursor {
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <header class="fade-in">
+    <div class="container">
+      <h1 style="text-align: center;">Ammar Shamsuri</h1>
+      <nav>
+        <ul>
+          <li><a href="#intro">Home</a></li>
+          <li><a href="#bio">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#reach">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="intro" class="fade-in">
+    <div class="container">
+     <h2><span class="typed-text"></span><span class="cursor">|</span></h2>
+      <p>A motivated student and future front-end developer.</p>
+      <button onclick="document.getElementById('reach').scrollIntoView({ behavior: 'smooth' })">Reach Me</button>
+    </div>
+  </section>
+
+  <section id="bio" class="fade-in">
+  <div class="section-box">
+    <h2>About Me</h2>
+    <img src="profile.jpg" alt="Photo of Your Name" style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 3px solid #343a40;" />
+    <p style="margin: 20px 0; font-size: 1.1rem;">
+      I’m currently studying at Universiti Teknologi MARA in the field of Information Management. I enjoy learning new digital skills and applying them in creative projects. I love working on web interfaces and exploring user-centered design.
+    </p>
+    <a href="information.html">
+      <button style="padding: 10px 24px; background-color: #343a40; color: white; border: none; border-radius: 8px; cursor: pointer;">
+        View More About Me
+      </button>
+    </a>
+  </div>
+</section>
+
+<section id="skills" class="fade-in">
+  <div class="section-box">
+    <h2>Skills</h2>
+    <ul style="max-width: 600px; margin: auto; list-style: square; padding-left: 20px; text-align: left;">
+      <li><abbr title="JavaScript with modern standards">Advanced JavaScript (ES6+, async/await, DOM manipulation)</abbr></li>
+      <li>React.js with functional components and hooks</li>
+      <li>Responsive design using Tailwind CSS & Flexbox/Grid</li>
+      <li>API Integration (RESTful & third-party services)</li>
+      <li>Version Control using Git and GitHub (feature branching)</li>
+      <li>Deployment using Netlify / Vercel</li>
+      <li>Performance optimization & code splitting</li>
+      <li>Accessibility (A11y) & semantic HTML</li>
+      <li>Firebase (Authentication, Firestore, Hosting)</li>
+    </ul>
+
+    <!-- Additional Skill Table -->
+    <table style="margin-top: 30px; width: 90%; margin-left: auto; margin-right: auto; background-color: white; color: black; border-collapse: collapse;">
+      <thead>
+        <tr style="background-color: #343a40; color: white;">
+          <th style="padding: 10px; border: 1px solid #ccc;">Skill</th>
+          <th style="padding: 10px; border: 1px solid #ccc;">Level</th>
+          <th style="padding: 10px; border: 1px solid #ccc;">Experience (Years)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ccc;">HTML/CSS</td>
+          <td style="padding: 10px; border: 1px solid #ccc;">Advanced</td>
+          <td style="padding: 10px; border: 1px solid #ccc;">3</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ccc;">JavaScript</td>
+          <td style="padding: 10px; border: 1px solid #ccc;">Intermediate</td>
+          <td style="padding: 10px; border: 1px solid #ccc;">2</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ccc;">React.js</td>
+          <td style="padding: 10px; border: 1px solid #ccc;">Intermediate</td>
+          <td style="padding: 10px; border: 1px solid #ccc;">1.5</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<section id="projects" class="fade-in">
+  <div class="section-box">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>Assistant to Senior System Administrator</h3>
+      <p>DHL eCommerce : April 2025 - Now</p>
+      <p>Assisted in managing and maintaining internal system operations, user access control, and server monitoring.</p>
+    </div>
+    <a href="experience.html">
+      <button style="padding: 10px 24px; background-color: #343a40; color: white; border: none; border-radius: 8px; cursor: pointer;">
+        More Of My Experience
+      </button>
+    </a>
+  </div>
+</section>
+
+
+<section id="education" class="fade-in">
+  <div class="section-box">
+    <h2>Education</h2>
+    <div class="card">
+      <p><strong>Degree in System Management</strong></p>
+      <p>Universiti Teknologi MARA (UiTM)</p>
+      <p>Expected Completion: 2025</p>
+    </div>
+    <div class="card">
+      <p><strong>Diploma in Information Management</strong></p>
+      <p>Universiti Teknologi MARA (UiTM)</p>
+      <p>Year Completion: 2023</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="reach" class="fade-in">
+  <div class="section-box">
+    <h2>Contact</h2>
+    <form id="contactForm">
+      <label for="fullname">Full Name *</label>
+      <input type="text" id="fullname" name="fullname" required placeholder="Your full name" />
+
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required placeholder="example@gmail.com" />
+
+      <label for="msg">Message *</label>
+      <textarea id="msg" name="msg" required placeholder="Type your message/inquiry here..."></textarea>
+
+      <button type="submit">Submit</button>
+      <p id="form-message" style="margin-top: 10px; font-weight: bold;"></p>
+    </form>
+  </div>
+</section>
+
+<section id="reflection" class="fade-in">
+  <div class="section-box">
+    <h2>Reflection</h2>
+    <div class="card">
+      <p>Throughout this project, I learned how to structure web pages using semantic HTML and style them effectively with CSS. One challenge I faced was making the design responsive across devices, but using flexbox and media queries helped a lot. I also experimented with animations and modern card layouts to improve visual appeal. If I had more time, I would add interactive elements like contact forms or dark mode toggle. This project strengthened my understanding of front-end web development and gave me more confidence in using clean, organized code.</p>
+    </div>
+  </div>
+</section>
+
+
+  <footer class="fade-in">
+    <p>© 2025 Your Name. Built with passion and persistence.</p>
+  </footer>
+
+  <button id="top-button" title="Back to top">↑</button>
+
+  <script>
+    const topBtn = document.getElementById('top-button');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 300){
+        topBtn.classList.add('show');
+      } else {
+        topBtn.classList.remove('show');
+      }
+    });
+
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  <script>
+  const typedTextSpan = document.querySelector(".typed-text");
+  const cursorSpan = document.querySelector(".cursor");
+
+  const textArray = ["Hello, It's Me Ammar", "I'm a Web Enthusiast", "Future Front-End Developer"];
+  const typingDelay = 100;
+  const erasingDelay = 60;
+  const newTextDelay = 1500; // Delay between current and next text
+  let textArrayIndex = 0;
+  let charIndex = 0;
+
+  function type() {
+    if (charIndex < textArray[textArrayIndex].length) {
+      typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingDelay);
+    } else {
+      setTimeout(erase, newTextDelay);
+    }
+  }
+
+  function erase() {
+    if (charIndex > 0) {
+      typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, erasingDelay);
+    } else {
+      textArrayIndex++;
+      if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+      setTimeout(type, typingDelay + 300);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (textArray.length) setTimeout(type, 1000);
+  });
+</script>
+<script>
+  const form = document.getElementById("contactForm");
+  const formMessage = document.getElementById("form-message");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = form.fullname.value.trim();
+    const email = form.email.value.trim();
+    const message = form.msg.value.trim();
+
+    formMessage.textContent = "";
+    formMessage.style.color = "red";
+
+    if (!name || !email || !message) {
+      formMessage.textContent = "Please fill in all fields.";
+      return;
+    }
+
+    // ✅ Accepts Gmail, Yahoo, Hotmail, Outlook, UiTM, other .edu.my emails
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|hotmail\.com|outlook\.com|uitm\.edu\.my|[\w.-]+\.edu\.my)$/;
+
+    if (!emailPattern.test(email)) {
+      formMessage.textContent = "Please enter a valid email address (e.g., example@gmail.com, name@uitm.edu.my, or student@anycollege.edu.my).";
+      return;
+    }
+
+    formMessage.style.color = "green";
+    formMessage.textContent = "Message successfully sent!";
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
